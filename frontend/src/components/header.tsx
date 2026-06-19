@@ -1,6 +1,6 @@
-import { Text, View, Pressable, StyleSheet } from "react-native";
-import HeaderButton from "./headerButton";
-import EvilIcons from "@expo/vector-icons/EvilIcons";
+import { Text, View, StyleSheet } from 'react-native';
+import HeaderButton from './headerButton';
+import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 export default function Header() {
   return (
@@ -27,32 +27,32 @@ const styles = StyleSheet.create({
   header: {
     paddingVertical: 5,
     paddingHorizontal: 10,
-    backgroundColor: "#121212",
+    backgroundColor: '#121212',
   },
   container: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   pageTitle: {
     fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
+    color: 'white',
+    fontWeight: 'bold',
   },
   avatarIcon: {
     width: 30,
     height: 30,
     borderRadius: 50,
-    backgroundColor: "blue",
+    backgroundColor: 'blue',
     margin: 10,
     borderWidth: 1,
-    borderColor: "white",
+    borderColor: 'white',
   },
   utilityIcons: {
-    flexDirection: "row",
-    marginLeft: "auto",
+    flexDirection: 'row',
+    marginLeft: 'auto',
   },
   navbar: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

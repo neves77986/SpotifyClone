@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from 'react-native';
 
-export default function CreateScreen() {
+export default function createScreen() {
   return (
     <View style={styles.container}>
       <Text>Criar</Text>
@@ -11,6 +11,6 @@ export default function CreateScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: '#ffffff',
   },
 });

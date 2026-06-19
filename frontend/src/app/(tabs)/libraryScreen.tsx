@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native';
 
-export default function LibraryScreen() {
+export default function libraryScreen() {
   return (
     <View style={styles.container}>
       <Text>biblioteca</Text>

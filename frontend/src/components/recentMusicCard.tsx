@@ -2,28 +2,22 @@ import { Text, View, Pressable, StyleSheet, Image } from 'react-native';
 import { Link } from 'expo-router';
 import { ImageSourcePropType } from 'react-native';
 
-type MusicCardProps = {
+type recentMusicCardProps = {
   id: string;
-  musicFormat: string;
   musicTitle: string;
-  musicArtist: string;
   musicCover: ImageSourcePropType;
 };
 
-export default function MusicCard({
+export default function RecentMusicCard({
   id,
-  musicFormat,
-  musicArtist,
   musicTitle,
   musicCover,
-}: MusicCardProps) {
+}: recentMusicCardProps) {
   return (
     <Pressable style={({ pressed }) => [pressed && styles.buttonPressed]}>
       <View style={styles.container}>
         <Image style={styles.musicCover} source={musicCover}></Image>
-        <Text style={styles.musicFormat}>{musicFormat}</Text>
         <Text style={styles.musicTitle}>{musicTitle}</Text>
-        <Text style={styles.musicArtist}>{musicArtist}</Text>
       </View>
     </Pressable>
   );
@@ -31,28 +25,25 @@ export default function MusicCard({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
-    margin: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#363636',
+    margin: 7,
+    width: 200,
+    borderRadius: 4,
   },
   musicCover: {
-    width: 150,
-    height: 150,
-  },
-  musicFormat: {
-    color: 'grey',
-    fontSize: 12,
+    width: 50,
+    height: 50,
   },
   musicTitle: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  musicArtist: {
-    color: 'grey',
-    fontSize: 12,
+    paddingHorizontal: 5,
   },
   buttonPressed: {
-    opacity: 0.6,
-    transform: [{ scale: 0.96 }, { translateY: 2 }],
+    opacity: 0.8,
+    transform: [{ scale: 0.98 }, { translateY: 2 }],
   },
 });

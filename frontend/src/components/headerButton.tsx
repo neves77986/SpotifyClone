@@ -1,5 +1,5 @@
-import { Text, View, Pressable, StyleSheet } from "react-native";
-import { useState } from "react";
+import { Text, View, Pressable, StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 type ButtonProps = {
   titulo: string;
@@ -13,7 +13,7 @@ export default function HeaderButton({ titulo }: ButtonProps) {
       style={[
         styles.button,
         {
-          backgroundColor: ButtonPressed ? "grey" : "green",
+          backgroundColor: ButtonPressed ? '#363636' : 'green',
         },
       ]}
       onPress={() => {
@@ -24,7 +24,7 @@ export default function HeaderButton({ titulo }: ButtonProps) {
         style={[
           styles.buttonText,
           {
-            color: ButtonPressed ? "white" : "black",
+            color: ButtonPressed ? 'white' : 'black',
           },
         ]}
       >
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    alignItems: "center",
+    alignItems: 'center',
   },
   buttonText: {
     fontSize: 13,
