@@ -18,15 +18,7 @@ export default function MusicSectionHorizontal({ title, songs }: SectionProps) {
         showsHorizontalScrollIndicator={false}
         data={songs}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <MusicCard
-            id={item.id}
-            musicArtist={item.artist}
-            musicTitle={item.title}
-            musicFormat={item.format}
-            musicCover={item.cover}
-          />
-        )}
+        renderItem={({ item }) => <MusicCard song={item} />}
       />
     </>
   );

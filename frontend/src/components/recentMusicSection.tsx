@@ -11,16 +11,10 @@ export default function RecentMusicSection({ songs }: RecentMusicSectionProps) {
     <FlatList
       showsHorizontalScrollIndicator={false}
       scrollEnabled={false}
-      data={songs}
+      data={songs.slice(0, 6)}
       numColumns={2}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <RecentMusicCard
-          id={item.id}
-          musicTitle={item.title}
-          musicCover={item.cover}
-        />
-      )}
+      renderItem={({ item }) => <RecentMusicCard song={item} />}
     />
   );
 }

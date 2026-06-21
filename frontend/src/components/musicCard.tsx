@@ -1,29 +1,22 @@
 import { Text, View, Pressable, StyleSheet, Image } from 'react-native';
-import { Link } from 'expo-router';
-import { ImageSourcePropType } from 'react-native';
+import { Link, router } from 'expo-router';
+import { SongsTypes } from '../app/Types/types';
 
 type MusicCardProps = {
-  id: string;
-  musicFormat: string;
-  musicTitle: string;
-  musicArtist: string;
-  musicCover: ImageSourcePropType;
+  song: SongsTypes;
 };
 
-export default function MusicCard({
-  id,
-  musicFormat,
-  musicArtist,
-  musicTitle,
-  musicCover,
-}: MusicCardProps) {
+export default function MusicCard({ song }: MusicCardProps) {
   return (
-    <Pressable style={({ pressed }) => [pressed && styles.buttonPressed]}>
+    <Pressable
+      style={({ pressed }) => [pressed && styles.buttonPressed]}
+      onPress={() => router.push(`../../songScreen/${song.id}`)}
+    >
       <View style={styles.container}>
-        <Image style={styles.musicCover} source={musicCover}></Image>
-        <Text style={styles.musicFormat}>{musicFormat}</Text>
-        <Text style={styles.musicTitle}>{musicTitle}</Text>
-        <Text style={styles.musicArtist}>{musicArtist}</Text>
+        <Image style={styles.musicCover} source={song.cover}></Image>
+        <Text style={styles.musicFormat}>Single</Text>
+        <Text style={styles.musicTitle}>{song.title}</Text>
+        <Text style={styles.musicArtist}>{song.artist}</Text>
       </View>
     </Pressable>
   );
