@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Pressable, View, Image } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link, router, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import Slider from '@react-native-community/slider';
 
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   minimizeButton: {
     backgroundColor: '#363636',
     padding: 15,
-    borderRadius: '50%',
+    borderRadius: 100,
   },
   functionButton: {
     backgroundColor: '#363636',
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
 
   buttonPlayPause: {
     backgroundColor: 'white',
-    borderRadius: '50%',
+    borderRadius: 100,
     padding: 10,
   },
 

@@ -3,22 +3,30 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
 
 import Header from '../../components/header';
-
+import Navbar from '../../components/navbar';
 import Songs from '../data/songs';
-import RecentMusicSection from '../../components/recentMusicSection';
-import MusicSectionHorizontal from '../../components/musicSectionHorizontal';
+import RecentMusicSection from '../../components/sections/recentMusicSection';
+import MusicSection from '../../components/sections/musicSectionHorizontal';
+import { useMemo } from 'react';
 
 export default function index() {
+  const recentSongs = useMemo(() => {
+    return [...Songs].sort(() => Math.random() - 0.5).slice(0, 6);
+  }, []);
+
+  const trendingSongs = useMemo(() => {
+    return [...Songs].sort(() => Math.random() - 0.5).slice(0, 10);
+  }, []);
   return (
     <>
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Header />
+          <Header HeaderTitle="Início" />
+          <Navbar />
+          <RecentMusicSection songs={recentSongs} />
 
-          <RecentMusicSection songs={Songs} />
-
-          <MusicSectionHorizontal
-            songs={Songs}
+          <MusicSection
+            songs={trendingSongs}
             title="Suas musicas mais ouvidas!"
           />
         </ScrollView>

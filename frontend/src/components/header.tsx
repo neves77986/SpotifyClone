@@ -2,22 +2,20 @@ import { Text, View, StyleSheet } from 'react-native';
 import HeaderButton from './headerButton';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 
-export default function Header() {
+type HeaderProps = {
+  HeaderTitle: string;
+};
+
+export default function Header({ HeaderTitle }: HeaderProps) {
   return (
     <View style={styles.header}>
       <View style={styles.container}>
         <View style={styles.avatarIcon}></View>
-        <Text style={styles.pageTitle}>Início</Text>
+        <Text style={styles.pageTitle}>{HeaderTitle}</Text>
         <View style={styles.utilityIcons}>
           <EvilIcons name="search" size={24} color="white" />
           <EvilIcons name="gear" size={24} color="white" />
         </View>
-      </View>
-
-      <View style={styles.navbar}>
-        <HeaderButton titulo="Tudo"></HeaderButton>
-        <HeaderButton titulo="Musicas"></HeaderButton>
-        <HeaderButton titulo="Playlists"></HeaderButton>
       </View>
     </View>
   );
@@ -50,9 +48,5 @@ const styles = StyleSheet.create({
   utilityIcons: {
     flexDirection: 'row',
     marginLeft: 'auto',
-  },
-  navbar: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
 });

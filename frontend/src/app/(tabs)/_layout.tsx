@@ -45,13 +45,6 @@ export default function TabsLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="createScreen"
-        options={{
-          title: 'Criar',
-          tabBarIcon: ({}) => <AntDesign name="plus" size={30} color="white" />,
-        }}
-      />
     </Tabs>
   );
 }
