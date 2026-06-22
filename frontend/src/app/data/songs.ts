@@ -5,6 +5,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/01_Nikes_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/02_Ivy_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/03_Pink_White_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/04_Be_Yourself_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/05_Solo_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/06_Skyline_To_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/07_Self_Control_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/08_Good_Guy_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/09_Nights_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/10_Solo_Reprise_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/11_Pretty_Sweet_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/12_Facebook_Story_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 13,
@@ -89,6 +101,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/13_Close_To_You_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 14,
@@ -96,6 +109,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/14_White_Ferrari_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 15,
@@ -103,6 +117,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/15_Seigfried_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 16,
@@ -110,6 +125,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/16_Godspeed_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 17,
@@ -117,6 +133,7 @@ const Songs = [
     artist: 'Frank Ocean',
     cover: require('../../assets/images/Blond_Capa.jpg'),
     audio: require('../../assets/songs/17_Futura_Free_SpotiDost.mp3'),
+    albumId: 1,
   },
   {
     id: 18,
@@ -124,6 +141,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/01_Sigo_na_Sombra_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 19,
@@ -131,6 +149,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/02_CR_Interludio_I_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 20,
@@ -138,6 +157,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/03_Quadros_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 21,
@@ -145,6 +165,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/04_O_Que_Sobra_Disso_Tudo_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 22,
@@ -152,6 +173,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/05_Visao_Ampla_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 23,
@@ -159,6 +181,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/06_Caminhos_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 24,
@@ -166,6 +189,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/07_Castelos_Ruinas_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 25,
@@ -173,6 +197,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/08_Piramide_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 26,
@@ -180,6 +205,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/09_Amores_Vicios_e_Obsessoes_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 27,
@@ -187,6 +213,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/10_Nao_Me_Espere_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 28,
@@ -194,6 +221,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/11_Um_Dia_de_Chuva_Qualquer_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 29,
@@ -201,6 +229,7 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/12_CR_Interludio_II_SpotiDost.mp3'),
+    albumId: 2,
   },
   {
     id: 30,
@@ -208,6 +237,47 @@ const Songs = [
     artist: 'BK',
     cover: require('../../assets/images/Castelos_Ruinas_Cover.jpg'),
     audio: require('../../assets/songs/13_O_Proximo_Nascer_do_Sol_SpotiDost.mp3'),
+    albumId: 2,
+  },
+  {
+    id: 31,
+    title: 'Cidade Do Pecado',
+    artist: 'BK',
+    cover: require('../../assets/images/Cidade_do_Pecado_Cover.jpg'),
+    audio: require('../../assets/songs/Cidade_do_Pecado_Single_Track_SpotiDost.mp3'),
+    albumId: null,
+  },
+  {
+    id: 32,
+    title: 'Da pra ser',
+    artist: 'Djonga',
+    cover: require('../../assets/images/Da_pra_ser_Cover.jpg'),
+    audio: require('../../assets/songs/Da_pra_ser_Single_Track_SpotiDost.mp3'),
+    albumId: null,
+  },
+  {
+    id: 33,
+    title: 'O Jeito',
+    artist: 'Flora Matos',
+    cover: require('../../assets/images/O_Jeito_Cover.jpg'),
+    audio: require('../../assets/songs/O_Jeito_Single_Track_SpotiDost.mp3'),
+    albumId: null,
+  },
+  {
+    id: 34,
+    title: 'Preciso Dizer Que Te Amo',
+    artist: 'Flora Matos',
+    cover: require('../../assets/images/Preciso_Dizer_Que_Te_Amo_Cover.jpg'),
+    audio: require('../../assets/songs/Preciso_Dizer_Que_Te_Amo_Single_Track_SpotiDost.mp3'),
+    albumId: null,
+  },
+  {
+    id: 35,
+    title: 'Salve',
+    artist: 'Tasha & Tracie',
+    cover: require('../../assets/images/Salve_Cover.jpg'),
+    audio: require('../../assets/songs/Salve_Single_Track_SpotiDost.mp3'),
+    albumId: null,
   },
 ];
 

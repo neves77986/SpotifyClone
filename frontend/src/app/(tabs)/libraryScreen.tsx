@@ -1,9 +1,16 @@
 import { Text, View, StyleSheet } from 'react-native';
+import Header from '../../components/header';
+import MusicSectionVertical from '@//components/sections/musicSectionVertical';
+import Songs from '../data/songs';
+import Navbar from '../../components/navbar';
 
 export default function libraryScreen() {
   return (
     <View style={styles.container}>
-      <Text>biblioteca</Text>
+      <Header HeaderTitle="Biblioteca" />
+      <Navbar />
+
+      <MusicSectionVertical songs={Songs} title="Recentes" />
     </View>
   );
 }
@@ -11,6 +18,6 @@ export default function libraryScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#121212',
   },
 });

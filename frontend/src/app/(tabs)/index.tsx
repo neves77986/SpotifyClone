@@ -17,6 +17,10 @@ export default function index() {
   const trendingSongs = useMemo(() => {
     return [...Songs].sort(() => Math.random() - 0.5).slice(0, 10);
   }, []);
+
+  const yourFavoriteSongs = useMemo(() => {
+    return [...Songs].sort(() => Math.random() - 0.5).slice(0, 10);
+  }, []);
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -26,9 +30,10 @@ export default function index() {
           <RecentMusicSection songs={recentSongs} />
 
           <MusicSection
-            songs={trendingSongs}
+            songs={yourFavoriteSongs}
             title="Suas musicas mais ouvidas!"
           />
+          <MusicSection songs={trendingSongs} title="Populares" />
         </ScrollView>
       </SafeAreaView>
     </>
