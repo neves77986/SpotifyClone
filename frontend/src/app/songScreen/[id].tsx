@@ -1,84 +1,93 @@
 import { StyleSheet, Text, Pressable, View, Image } from 'react-native';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import Slider from '@react-native-community/slider';
+import { useFocusEffect } from '@react-navigation/native';
+import { Keyboard } from 'react-native';
 
 import Entypo from '@expo/vector-icons/Entypo';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-import Songs from '../data/songs';
+import Songs from '../../data/songs';
 
 export default function SongScreen() {
   const { id } = useLocalSearchParams();
-  const song = Songs.find((item) => item.id === Number(id));
 
-  const audioSource = song?.audio ?? null;
+  const song = useMemo(() => {
+    return Songs.find((item) => item.id === Number(id));
+  }, [id]);
 
-  const player = useAudioPlayer(audioSource);
+  if (!song) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={{ color: 'white' }}>Música não encontrada</Text>
+      </SafeAreaView>
+    );
+  }
+
+  const player = useAudioPlayer(song.audio);
   const status = useAudioPlayerStatus(player);
-  const isPlaying = status?.playing;
 
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-
-    return `${minutes}:${secs.toString().padStart(2, '0')}`;
-  };
+  const isPlaying = status?.playing ?? false;
 
   const currentTime = status?.currentTime ?? 0;
   const duration = status?.duration ?? 1;
 
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  useFocusEffect(() => {
+    return () => {
+      Keyboard.dismiss();
+    };
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Pressable style={styles.minimizeButton} onPress={router.back}>
+        <Pressable style={styles.minimizeButton} onPress={() => router.back()}>
           <AntDesign name="arrow-left" size={20} color="white" />
         </Pressable>
+
         <Pressable style={styles.functionButton}>
           <Entypo name="dots-three-vertical" size={20} color="white" />
         </Pressable>
       </View>
 
       <View style={styles.coverDiv}>
-        <Image style={styles.cover} source={song?.cover}></Image>
+        <Image style={styles.cover} source={song.cover} />
       </View>
 
       <View style={styles.audioPlayer}>
-        <Text style={styles.musicTitle}>{song?.title}</Text>
-        <Text style={styles.musicArtist}>{song?.artist}</Text>
+        <Text style={styles.musicTitle}>{song.title}</Text>
+        <Text style={styles.musicArtist}>{song.artist}</Text>
 
         <View style={styles.sliderPlayer}>
           <Slider
-            value={currentTime}
+            value={Number.isFinite(currentTime) ? currentTime : 0}
             minimumValue={0}
-            maximumValue={duration}
-            minimumTrackTintColor="#FFFFFF"
+            maximumValue={Number.isFinite(duration) ? duration : 1}
+            minimumTrackTintColor="#1DB954"
             maximumTrackTintColor="#4e4e4e"
             thumbTintColor="#FFFFFF"
-            onSlidingComplete={(value) => {
-              player.seekTo(value);
-            }}
+            onSlidingComplete={(value) => player.seekTo(value)}
           />
+
           <View style={styles.musicTimeView}>
-            <Text style={styles.musicTime}>
-              {formatTime(player.currentTime)}
-            </Text>
-            <Text style={styles.musicTime}>{formatTime(player.duration)}</Text>
+            <Text style={styles.musicTime}>{formatTime(currentTime)}</Text>
+            <Text style={styles.musicTime}>{formatTime(duration)}</Text>
           </View>
         </View>
       </View>
 
       <View style={styles.audioController}>
         <Pressable
-          onPress={() => {
-            if (isPlaying) {
-              player.pause();
-            } else {
-              player.play();
-            }
-          }}
+          onPress={() => (isPlaying ? player.pause() : player.play())}
           style={styles.buttonPlayPause}
         >
           {isPlaying ? (
@@ -117,23 +126,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   cover: {
-    width: 400,
-    height: 400,
+    width: 320,
+    height: 320,
+    borderRadius: 12,
   },
   audioPlayer: {
-    marginTop: 50,
+    marginTop: 40,
     marginHorizontal: 25,
   },
   musicTitle: {
     color: 'white',
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: 'bold',
   },
   musicArtist: {
     color: 'grey',
-    fontSize: 25,
+    fontSize: 18,
   },
-
   sliderPlayer: {
     marginTop: 25,
   },
@@ -143,19 +152,18 @@ const styles = StyleSheet.create({
   },
   musicTime: {
     color: 'grey',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   },
-
   buttonPlayPause: {
     backgroundColor: 'white',
     borderRadius: 100,
     padding: 10,
   },
-
   audioController: {
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 30,
   },
 });

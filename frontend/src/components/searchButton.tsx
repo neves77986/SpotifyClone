@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   searchInput: {
     marginHorizontal: 10,
     fontSize: 14,
-    width: '100%',
+    width: 1000,
     borderWidth: 0,
   },
 });

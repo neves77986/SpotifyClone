@@ -1,6 +1,6 @@
 import { Text, View, Pressable, StyleSheet, Image } from 'react-native';
 import { Link, router } from 'expo-router';
-import { SongsTypes } from '../../app/Types/types';
+import SongsTypes from '../../Types/types';
 
 type MusicCardProps = {
   song: SongsTypes;

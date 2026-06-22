@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 
 import Header from '../../components/header';
 import Navbar from '../../components/navbar';
-import Songs from '../data/songs';
+import Songs from '../../data/songs';
 import RecentMusicSection from '../../components/sections/recentMusicSection';
 import MusicSection from '../../components/sections/musicSectionHorizontal';
 import { useMemo } from 'react';

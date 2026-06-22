@@ -1,13 +1,16 @@
 import { Text, View, Pressable, StyleSheet, Image } from 'react-native';
-import { SongsTypes } from '../../app/Types/types';
-
+import SongsTypes from '../../Types/types';
+import { router } from 'expo-router';
 type recentMusicCardProps = {
   song: SongsTypes;
 };
 
 export default function RecentMusicCard({ song }: recentMusicCardProps) {
   return (
-    <Pressable style={({ pressed }) => [pressed && styles.buttonPressed]}>
+    <Pressable
+      style={({ pressed }) => [pressed && styles.buttonPressed]}
+      onPress={() => router.push(`../../songScreen/${song.id}`)}
+    >
       <View style={styles.container}>
         <Image style={styles.musicCover} source={song.cover}></Image>
         <Text style={styles.musicTitle}>{song.title}</Text>
